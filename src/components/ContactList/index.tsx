@@ -1,16 +1,19 @@
-import { Link } from "react-router-dom"
+import { useContext } from "react";
+import { ContactContext } from "../../providers/ContactContext";
+import { ContactCard } from "./ContactCard";
 
-export const ConactList = () => {
-    // const { scrapList } = useContext(ScrapContext);
+export const ContactList = () => {
+    const { contactList } = useContext(ContactContext);
+
+
     return(
         <section>
             <div>
-                <h1 className="title">Lista de contatos</h1>
-                <Link className="btn solid" to="/contact/create">Deixar scrap</Link>
+                <h1>Lista de contatos</h1>
             </div>
             <ul>
                 {contactList.map(contact => (
-                    <ContactCard key={scrap.id} scrap={scrap} />
+                    <ContactCard key={contact.id} contact={contact} />
                 ))}
             </ul>
         </section>

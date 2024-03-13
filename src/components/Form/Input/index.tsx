@@ -6,7 +6,7 @@ export const Input = forwardRef(( { label,error, ...rest}: IInputProps, ref: For
         <div>
            <label >{label}</label>
            <input ref={ref} {...rest} />
-           {error ? <p className="paragraph">{error.message}</p> : null}
+           {error ? <p>{error.message}</p> : null}
         </div>
      );
 });

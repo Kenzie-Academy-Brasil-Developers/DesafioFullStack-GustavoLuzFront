@@ -47,7 +47,7 @@ export const ContactProvider = ({ children }: IProps) => {
 
          setContactList([...contactList, data ]);
 
-        //  toast.success("contact adicionado com sucesso!");
+    
 
          navigate("/dashboard"); 
       } catch (error) {
@@ -94,7 +94,7 @@ export const ContactProvider = ({ children }: IProps) => {
          setContactList(newContactList);         
          setEditingContact(null);
 
-        //  toast.success("contato editado com sucesso!");
+        
 
          navigate("/dashboard");
 

@@ -4,29 +4,27 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { ClientContext } from "../../../providers/ClientContext";
 import { Input } from "../Input";
-import { InputPassword } from "../InputPassword";
-import { TLoginFormValues } from "../LoginForm/loginFormSchema";
 import { TCreateContactFormValues, createContactFormSchema } from "./createContactFormSchema";
+import { ContactContext } from "../../../providers/ContactContext";
 
 export const CreateContactForm = () => {
 
-    const { userLogin } = useContext(ClientContext);
+    const { createContact } = useContext(ContactContext);
 
-    const [loading, setLoading] = useState(false);
-    const {register,
+    const { register,
         handleSubmit,
         formState: { errors },
-        } = useForm({
+    } = useForm({
         resolver: zodResolver(createContactFormSchema),
-     });
-  
+    });
+
 
 
 
     const submit: SubmitHandler<TCreateContactFormValues> = (formData) => {
-             
-     };
-  
+        createContact(formData)
+    };
+
 
     return (
         <form onSubmit={handleSubmit(submit)}>
@@ -35,7 +33,6 @@ export const CreateContactForm = () => {
                 type="name"
                 {...register("name")}
                 error={errors.name}
-                disabled={loading}
             />
 
             <Input
@@ -43,14 +40,21 @@ export const CreateContactForm = () => {
                 type="email"
                 {...register("email")}
                 error={errors.email}
-                disabled={loading}
             />
 
-            <Link to="/register">
-                Crie uma conta
+            <Input
+                label="Digite o telefone do contato a ser adicionado"
+                type="telephone"
+                {...register("telephone")}
+                error={errors.telephone}
+
+            />
+
+            <Link to="/dashboard">
+                Voltar para sua página
             </Link>
-            <button type="submit" disabled={loading}>
-                {loading ? "Logando..." : "Logar"}
+            <button type="submit">
+                Adicione um novo contato
             </button>
 
         </form>
