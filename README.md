@@ -1,3 +1,7 @@
+# About the App
+
+Its an app to manage your contacts, having a login, creation of a new user as well as a crud for contacts. To run the app, clone it to your machine, use npm intall and run the comman npm run dev to begin testing.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
