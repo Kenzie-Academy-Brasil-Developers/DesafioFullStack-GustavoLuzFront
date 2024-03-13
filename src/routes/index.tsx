@@ -6,6 +6,7 @@ import { DashBoard } from "../pages/DashBoard"
 import { PublicRoutes } from "./PublicRoutes"
 import { PrivateRoutes } from "./PrivateRoutes"
 import { CreateContactPage } from "../pages/CreateContactPage"
+import { EditContactPage } from "../pages/EditContactPage"
 
 
 export const RoutesMain = () => {
@@ -19,7 +20,7 @@ export const RoutesMain = () => {
           <Route element={<PrivateRoutes />}>
              <Route path="/dashboard" element={<DashBoard />} />
              <Route path="/dashboard/createContact" element={<CreateContactPage />} /> 
-             {/* <Route path="/user/edit" element={<EditScrapPage />} /> */}
+             <Route path="/dashboard/editContact" element={<EditContactPage />} />
           </Route>
  
           <Route path="*" element={<ErrorPage />} />

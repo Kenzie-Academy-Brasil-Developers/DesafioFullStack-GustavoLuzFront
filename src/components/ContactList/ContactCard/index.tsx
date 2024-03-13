@@ -35,7 +35,7 @@ export const ContactCard = ({ contact }: IContactProps) => {
                    <button
                       onClick={() => {
                          setEditingContact(contact);
-                         navigate("/dashboard/edit");
+                         navigate("/dashboard/editContact");
                       }}
                       title="Editar"
                       aria-label="edit"
