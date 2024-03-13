@@ -48,7 +48,7 @@ export const LoginForm = () => {
             <Link to="/register">
                 Crie uma conta
             </Link>
-            <button disabled={loading}>
+            <button type="submit" disabled={loading}>
                 {loading ? "Logando..." : "Logar"}
             </button>
 

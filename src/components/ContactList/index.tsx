@@ -9,8 +9,8 @@ export const ConactList = () => {
                 <Link className="btn solid" to="/contact/create">Deixar scrap</Link>
             </div>
             <ul>
-                {scrapList.map(scrap => (
-                    <ScrapCard key={scrap.id} scrap={scrap} />
+                {contactList.map(contact => (
+                    <ContactCard key={scrap.id} scrap={scrap} />
                 ))}
             </ul>
         </section>
